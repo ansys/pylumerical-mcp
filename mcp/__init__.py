@@ -26,9 +26,6 @@ the framework's persistent Python subprocess.
 # ------------------------------------------------------------------------
 import importlib.metadata as importlib_metadata
 
-__version__ = importlib_metadata.version(__name__.replace(".", "-"))
-"""PyLumerical MCP version."""
-
 # Importing ``tools`` and ``contexts`` runs their ``@app.tool()`` decorators,
 # which is the only way tools get registered on :data:`app`.
 from ansys.lumerical.mcp import (
@@ -36,6 +33,9 @@ from ansys.lumerical.mcp import (
     tools as _tools,  # noqa: F401
 )
 from ansys.lumerical.mcp.server import app
+
+__version__ = importlib_metadata.version(__name__.replace(".", "-"))
+"""PyLumerical MCP version."""
 
 __all__ = [
     "__version__",
