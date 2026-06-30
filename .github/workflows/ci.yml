@@ -20,7 +20,7 @@ env:
   ON_CI: "true"
   MAIN_PYTHON_VERSION: "3.12"
   PACKAGE_NAME: "ansys-lumerical-mcp"
-  DOCUMENTATION_CNAME: "effective-giggle-y7nyqpo.pages.github.io" # lumerical-mcp.docs.pyansys.com
+  DOCUMENTATION_CNAME: "lumerical-mcp.docs.pyansys.com"
 
 jobs:
   update-changelog:
