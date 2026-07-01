@@ -3,9 +3,9 @@ Getting started
 
 Learn how to install and configure PyLumerical-MCP.
 
-.. grid:: 2 2 3 3
-   :gutter: 1 2 3 3
-   :padding: 1 2 3 3
+.. grid:: 2 2 2 2
+   :gutter: 1 2 2 2
+   :padding: 1 2 2 2
 
    .. grid-item-card:: :fa:`download` Installation
       :link: installation
