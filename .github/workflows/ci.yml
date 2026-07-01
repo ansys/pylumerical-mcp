@@ -7,8 +7,6 @@ on:
       - "v*"
     branches:
        - main
-  schedule:
-    - cron:  '30 4 * * *'  # Daily at 04:30 UTC
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -340,20 +338,13 @@ jobs:
           name: ${{ env.PACKAGE_NAME }}-artifacts
           path: ${{ env.PACKAGE_NAME }}-artifacts
 
-      # - name: "Upload artifacts to PyPI using trusted publisher"
-      #   uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
-      #   with:
-      #     repository-url: "https://upload.pypi.org/legacy/"
-      #     print-hash: true
-      #     packages-dir: ${{ env.PACKAGE_NAME }}-artifacts
-      #     skip-existing: false
-
-      - name: "Release to private PyPI"
-        uses: ansys/actions/release-pypi-private@a5b0351dc277d68c2dc1beca2d2674c7dfa4fc55 #v10.3.3
+      - name: "Upload artifacts to PyPI using trusted publisher"
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
         with:
-          library-name: ${{ env.PACKAGE_NAME }}
-          twine-username: "__token__"
-          twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
+          repository-url: "https://upload.pypi.org/legacy/"
+          print-hash: true
+          packages-dir: ${{ env.PACKAGE_NAME }}-artifacts
+          skip-existing: false
 
   doc-deploy-stable:
     name: "Deploy stable documentation"
