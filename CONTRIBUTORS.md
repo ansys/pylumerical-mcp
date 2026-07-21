@@ -2,8 +2,9 @@
 
 ## Project Lead
 
-* [Camille Latapie](https://github.com/clatapie)
+* [Luke Queenan](https://github.com/lukequeenan-ansys)
 
 ## Individual Contributors
 
+* [Camille Latapie](https://github.com/clatapie)
 * [Roberto Pastor Muela](https://github.com/RobPasMue)
