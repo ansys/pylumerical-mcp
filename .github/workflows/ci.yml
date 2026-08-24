@@ -105,7 +105,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ['3.11', '3.12', '3.13', '3.14']
+        python-version: ['3.12', '3.13', '3.14']
     steps:
       - name: "Build wheelhouse and perform smoke test"
         uses: ansys/actions/build-wheelhouse@7419880d64bb0bba83f968ca803611df0b76faf0 #v10.3.4
@@ -124,7 +124,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ['3.11', '3.12', '3.13', '3.14']
+        python-version: ['3.12', '3.13', '3.14']
     steps:
       - name: "Run unit tests"
         uses: ansys/actions/tests-pytest@7419880d64bb0bba83f968ca803611df0b76faf0 #v10.3.4
