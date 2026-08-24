@@ -1,0 +1,98 @@
+
+
+
+
+
+
+The ``pic.py`` module
+=====================
+
+.. py:module:: ansys.lumerical.mcp.contexts.pic
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: pic
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_pic`
+            - Shared PIC simulation hygiene for FDTD, MODE, and FEEM optical tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Shared photonic-integrated-circuit guidance for optical solvers.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_pic() -> str
+
+   
+   Shared PIC simulation hygiene for FDTD, MODE, and FEEM optical tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

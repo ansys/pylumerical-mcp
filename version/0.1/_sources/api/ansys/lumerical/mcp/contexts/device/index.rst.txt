@@ -1,0 +1,163 @@
+
+
+
+
+
+
+The ``device.py`` module
+========================
+
+.. py:module:: ansys.lumerical.mcp.contexts.device
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: device
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_device_workflow`
+            - Finite-element IDE workflow shared by HEAT, CHARGE, FEEM, and DGTD.
+
+
+          * - :py:obj:`~get_guidelines_for_device_materials`
+            - Material-library creation and database discovery for DEVICE finite-element solvers.
+
+
+          * - :py:obj:`~get_guidelines_for_device_simulation_region`
+            - Simulation-region setup shared by HEAT, CHARGE, FEEM, DGTD, and peers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+DEVICE finite-element IDE guideline topics.
+
+Owns guidelines for the Lumerical finite-element solver environment (DEVICE IDE),
+which hosts HEAT, CHARGE, FEEM, and DGTD:
+
+- ``device_workflow`` -- chunked build/setup stages shared across all
+  finite-element solvers: materials, geometry, solver addition, simulation
+  region, boundary conditions, monitors, run, and results.
+- ``device_materials`` -- model-material creation, property-family
+  assignment (EM / CT / HT), and database discovery.
+- ``device_simulation_region`` -- simulation-region ownership model,
+  boundary types (Open / Closed / Shell), and solver linkage.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_device_workflow() -> str
+
+   
+   Finite-element IDE workflow shared by HEAT, CHARGE, FEEM, and DGTD.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_device_materials() -> str
+
+   
+   Material-library creation and database discovery for DEVICE finite-element solvers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_device_simulation_region() -> str
+
+   
+   Simulation-region setup shared by HEAT, CHARGE, FEEM, DGTD, and peers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

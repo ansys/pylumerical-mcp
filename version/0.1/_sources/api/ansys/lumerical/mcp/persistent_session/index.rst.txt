@@ -1,0 +1,120 @@
+
+
+
+
+
+
+The ``persistent_session.py`` module
+====================================
+
+.. py:module:: ansys.lumerical.mcp.persistent_session
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: persistent_session
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.persistent_session.LumericalPersistentPythonSession`
+            - A :class:`PersistentPythonSession` that tolerates long, silent operations.
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~logger`
+            - 
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> LumericalPersistentPythonSession</api/ansys/lumerical/mcp/persistent_session/LumericalPersistentPythonSession>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Lumerical-tuned :class:`PersistentPythonSession`.
+
+The base :class:`ansys.common.mcp.PersistentPythonSession.execute` ends its
+collection loop after 0.5 seconds of no data (``helpers.py:353`` --
+``consecutive_empty_reads > 5``) and on a caller-supplied ``timeout``. Both
+early returns are hostile to Lumerical. A fresh ``FDTD()`` spends seconds in
+silent C-level work. The call gives up before the marker arrives, and the
+next call's ``_drain_queues`` discards the late output as stale. Timeout
+returns also leave the stateful ``python -i`` REPL mid-statement and let a
+prior call's stale marker satisfy the next call's wait loop.
+
+This subclass re-implements ``execute`` with **unbounded, marker-only
+termination**. It waits indefinitely for a per-call ``___EXEC_<uuid>___``
+marker matched by exact-line equality (so neither stale markers nor user
+code printing the token can end the wait), with a periodic
+``process.poll()`` returning a distinct ``"Subprocess exited..."`` envelope
+if the child dies.
+
+Hung snippets are recovered out-of-band via the ``restart_session`` MCP tool
+(:meth:`PersistentPythonSession.restart`), issued as a parallel request. The
+wait loop polls a *locally captured* subprocess reference rather than
+``self.process`` so a parallel ``restart()`` reassigning ``self.process``
+cannot deadlock the wedged call on the new handle. The captured reference
+flips to an exit code when the original child is killed.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: logger
+
+
+

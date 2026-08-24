@@ -1,0 +1,112 @@
+
+
+
+
+
+
+:class:`LumericalPersistentPythonSession`
+=========================================
+
+
+.. py:class:: ansys.lumerical.mcp.persistent_session.LumericalPersistentPythonSession(python_executable: Optional[str] = None, startup_code: Optional[str] = None, working_directory: Optional[str] = None)
+
+   Bases: :py:obj:`ansys.common.mcp.helpers.PersistentPythonSession`
+
+
+   
+   A :class:`PersistentPythonSession` that tolerates long, silent operations.
+
+   :meth:`execute` blocks indefinitely on a per-call completion marker; hung
+   calls are recovered out-of-band by the ``restart_session`` MCP tool, which
+   invokes :meth:`PersistentPythonSession.restart`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: LumericalPersistentPythonSession
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~execute`
+            - Execute Python code in the persistent session.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.lumerical.mcp.persistent_session import LumericalPersistentPythonSession
+
+
+
+Method detail
+-------------
+
+.. py:method:: execute(code: str) -> dict[str, Any]
+
+   
+   Execute Python code in the persistent session.
+
+
+   :Parameters:
+
+       **code** : :class:`python:str`
+           Python source to feed to the persistent ``python -u -i`` process.
+
+
+
+   :Returns:
+
+       :class:`python:dict`\[:class:`python:str`, :obj:`Any`]
+           Same shape as :meth:`PersistentPythonSession.execute` --
+           ``{"success", "stdout", "stderr", "error"}``.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

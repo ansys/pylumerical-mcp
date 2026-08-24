@@ -1,0 +1,103 @@
+
+
+
+
+
+
+The ``materials.py`` module
+===========================
+
+.. py:module:: ansys.lumerical.mcp.contexts.materials
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: materials
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_materials`
+            - Built-in versus custom materials, anisotropic input. Applies to FDTD and MODE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Material-selection guidance shared by FDTD and MODE (``materials`` topic).
+
+Both products use the same material database and ``addmaterial``/``setmaterial``
+lumapi calls. The markdown below is therefore neutral
+in its handle naming (``fdtd`` shown for brevity, ``mode`` works
+identically).
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_materials() -> str
+
+   
+   Built-in versus custom materials, anisotropic input. Applies to FDTD and MODE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The contexts package &#8212; PyLumerical MCP</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=5ffe81b6" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../../../_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../_static/documentation_options.js?v=38b66d78"></script>
+    <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f245db63"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/lumerical/mcp/contexts/index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="The device.py module" href="device/index.html" />
+    <link rel="prev" title="The ansys.lumerical.mcp library" href="../index.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.0" />
+  
+    
+    <script src="../../../../../_static/searchtools.js"></script>
+    <script src="../../../../../_static/language_data.js"></script>
+    <script src="../../../../../searchindex.js"></script>
+  
+  <link rel="canonical" href="https://lumerical-mcp.docs.pyansys.com/version/stable/api/ansys/lumerical/mcp/contexts/index.html" />
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyLumerical MCP - Home"/>
+    <img src="../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyLumerical MCP - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="PyLumerical MCP home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pylumerical-mcp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pylumerical-mcp/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i><span class="visually-hidden">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="PyLumerical MCP home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pylumerical-mcp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pylumerical-mcp/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i><span class="visually-hidden">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><span class="nf nf-md-package"></span> ansys.lumerical.mcp</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"> <span class="nf nf-md-package"></span> contexts</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="device/index.html"> <span class="nf nf-fa-file"></span> device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fdtd/index.html"> <span class="nf nf-fa-file"></span> fdtd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="general/index.html"> <span class="nf nf-fa-file"></span> general</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geometry/index.html"> <span class="nf nf-fa-file"></span> geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect/index.html"> <span class="nf nf-fa-file"></span> interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials/index.html"> <span class="nf nf-fa-file"></span> materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mode/index.html"> <span class="nf nf-fa-file"></span> mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pic/index.html"> <span class="nf nf-fa-file"></span> pic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="s_parameter_sweep/index.html"> <span class="nf nf-fa-file"></span> s_parameter_sweep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sweeps/index.html"> <span class="nf nf-fa-file"></span> sweeps</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../__main__/index.html"> <span class="nf nf-fa-file"></span> __main__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config/index.html"> <span class="nf nf-fa-file"></span> config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context/index.html"> <span class="nf nf-fa-file"></span> context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../persistent_session/index.html"> <span class="nf nf-fa-file"></span> persistent_session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prompts/index.html"> <span class="nf nf-fa-file"></span> prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server/index.html"> <span class="nf nf-fa-file"></span> server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../session_helpers/index.html"> <span class="nf nf-fa-file"></span> session_helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../startup_code/index.html"> <span class="nf nf-fa-file"></span> startup_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html"> <span class="nf nf-fa-file"></span> tools</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ansys.lumerical.mcp</span></code> library</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The <code class="docutils literal notranslate"><span class="pre">contexts</span></code> package</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.lumerical.mcp.contexts">
+<span id="the-contexts-package"></span><h1>The <code class="docutils literal notranslate"><span class="pre">contexts</span></code> package<a class="headerlink" href="#module-ansys.lumerical.mcp.contexts" title="Link to this heading">#</a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Submodules</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="device/index.html#module-ansys.lumerical.mcp.contexts.device" title="ansys.lumerical.mcp.contexts.device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">device</span></code></a></p></td>
+<td><p>DEVICE finite-element IDE guideline topics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="fdtd/index.html#module-ansys.lumerical.mcp.contexts.fdtd" title="ansys.lumerical.mcp.contexts.fdtd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fdtd</span></code></a></p></td>
+<td><p>FDTD-specific guideline topics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="general/index.html#module-ansys.lumerical.mcp.contexts.general" title="ansys.lumerical.mcp.contexts.general"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general</span></code></a></p></td>
+<td><p>Product-agnostic Lumerical workflow guidance (<code class="docutils literal notranslate"><span class="pre">workflow</span></code> topic).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="geometry/index.html#module-ansys.lumerical.mcp.contexts.geometry" title="ansys.lumerical.mcp.contexts.geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geometry</span></code></a></p></td>
+<td><p>Dictionary-based <code class="docutils literal notranslate"><span class="pre">addX</span></code> syntax shared by FDTD, MODE, and DEVICE.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="interconnect/index.html#module-ansys.lumerical.mcp.contexts.interconnect" title="ansys.lumerical.mcp.contexts.interconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interconnect</span></code></a></p></td>
+<td><p>INTERCONNECT-specific guideline topics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="materials/index.html#module-ansys.lumerical.mcp.contexts.materials" title="ansys.lumerical.mcp.contexts.materials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">materials</span></code></a></p></td>
+<td><p>Material-selection guidance shared by FDTD and MODE (<code class="docutils literal notranslate"><span class="pre">materials</span></code> topic).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mode/index.html#module-ansys.lumerical.mcp.contexts.mode" title="ansys.lumerical.mcp.contexts.mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mode</span></code></a></p></td>
+<td><p>MODE-specific guideline topics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pic/index.html#module-ansys.lumerical.mcp.contexts.pic" title="ansys.lumerical.mcp.contexts.pic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pic</span></code></a></p></td>
+<td><p>Shared photonic-integrated-circuit guidance for optical solvers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="s_parameter_sweep/index.html#module-ansys.lumerical.mcp.contexts.s_parameter_sweep" title="ansys.lumerical.mcp.contexts.s_parameter_sweep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">s_parameter_sweep</span></code></a></p></td>
+<td><p>S-parameter matrix sweep guidance shared by FDTD and MODE (<code class="docutils literal notranslate"><span class="pre">s_parameter_sweep</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sweeps/index.html#module-ansys.lumerical.mcp.contexts.sweeps" title="ansys.lumerical.mcp.contexts.sweeps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sweeps</span></code></a></p></td>
+<td><p>Product-agnostic sweep guidance (<code class="docutils literal notranslate"><span class="pre">sweeps</span></code> and <code class="docutils literal notranslate"><span class="pre">nested_sweeps</span></code> topics).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Functions</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_device_materials</span></code></p></td>
+<td><p>Material-library creation and database discovery for DEVICE finite-element solvers.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_device_simulation_region</span></code></p></td>
+<td><p>Simulation-region setup shared by HEAT, CHARGE, FEEM, DGTD, and peers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_device_workflow</span></code></p></td>
+<td><p>Finite-element IDE workflow shared by HEAT, CHARGE, FEEM, and DGTD.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_boundary_conditions</span></code></p></td>
+<td><p>FDTD boundary conditions: PML profiles, symmetric/anti-symmetric, periodic, Bloch.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_far_field_and_grating</span></code></p></td>
+<td><p>FDTD far-field and grating projection: farfield2d/3d, farfieldexact, NA filtering.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_mesh_and_convergence</span></code></p></td>
+<td><p>FDTD mesh accuracy, conformal mesh, mesh overrides, auto-shutoff, divergence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_monitors_and_field_extraction</span></code></p></td>
+<td><p>FDTD monitor catalog + field-extraction patterns (override-global, reduce-before-print).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_run_and_results</span></code></p></td>
+<td><p>FDTD run + results: solver args, run-once + <code class="docutils literal notranslate"><span class="pre">switchtolayout</span></code>, datasets, <code class="docutils literal notranslate"><span class="pre">getresult</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_source_types</span></code></p></td>
+<td><p>FDTD source-type catalog: plane wave, Gaussian, dipole, TFSF, import, BFAST.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_sources_monitors</span></code></p></td>
+<td><p>Global source/monitor settings and the port-vs-mode-source decision.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_workflow</span></code></p></td>
+<td><p>FDTD-specific build/setup workflow: stages, PML extension, disambiguation defaults.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_fdtd_workflow_example</span></code></p></td>
+<td><p>Worked end-to-end FDTD example: straight silicon waveguide with TE ports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_workflow</span></code></p></td>
+<td><p>Product-agnostic execution model, snippet structure, chunking, do-not rules.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_geometry</span></code></p></td>
+<td><p>Dictionary-based <code class="docutils literal notranslate"><span class="pre">addX</span></code> syntax for Lumerical layout objects (FDTD/MODE/DEVICE).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_interconnect_commands</span></code></p></td>
+<td><p>INTERCONNECT-specific lumapi command reference by category.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_interconnect_simulation</span></code></p></td>
+<td><p>INTERCONNECT simulation config: root element, time/freq domain, result extraction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_interconnect_workflow</span></code></p></td>
+<td><p>INTERCONNECT-specific build/setup workflow: stages, element management, simulation config.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_materials</span></code></p></td>
+<td><p>Built-in versus custom materials, anisotropic input. Applies to FDTD and MODE.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_mode_eme_workflow</span></code></p></td>
+<td><p>MODE EME build/setup and analysis workflow.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_mode_fde_results</span></code></p></td>
+<td><p>MODE FDE solve/result extraction guidance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_mode_fde_workflow</span></code></p></td>
+<td><p>MODE FDE build/setup workflow for straight and bent-waveguide tasks.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_mode_varfdtd_workflow</span></code></p></td>
+<td><p>MODE varFDTD build/setup workflow.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_pic</span></code></p></td>
+<td><p>Shared PIC simulation hygiene for FDTD, MODE, and FEEM optical tasks.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_s_parameter_sweep</span></code></p></td>
+<td><p>S-parameter matrix sweep recipe and Y-branch example for FDTD and MODE.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_nested_sweeps</span></code></p></td>
+<td><p>Product-agnostic nested sweep workflow based on <code class="docutils literal notranslate"><span class="pre">insertsweep</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for_sweeps</span></code></p></td>
+<td><p>Product-agnostic sweep lifecycle: addsweep/setsweep/runsweep/getsweepresult.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#contexts.get_guidelines_for" title="contexts.get_guidelines_for"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_guidelines_for</span></code></a></p></td>
+<td><p>Fetch authoritative Lumerical scripting guidelines (markdown) for one topic.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Attributes</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#contexts.GuidelinesContent" title="contexts.GuidelinesContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GuidelinesContent</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Curated Lumerical scripting guidance returned by <code class="docutils literal notranslate"><span class="pre">get_guidelines_for</span></code>.</p>
+<p>This package powers a single MCP tool, <a class="reference internal" href="#contexts.get_guidelines_for" title="contexts.get_guidelines_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_guidelines_for()</span></code></a>, that the
+LLM is expected to call BEFORE generating any Lumerical Python (lumapi)
+code. It returns authoritative markdown for a chosen topic so the model
+does not have to rely on whatever priors it picked up at training time.</p>
+<p>Topic taxonomy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">workflow</span></code> – product-agnostic execution model, snippet structure,
+chunking, parameter management, and the do-not-assume / do-not-invent
+rules. Applies to every Lumerical product. Lives in
+<a class="reference internal" href="general/index.html#module-ansys.lumerical.mcp.contexts.general" title="ansys.lumerical.mcp.contexts.general"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.general</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sweeps</span></code> – product-agnostic lifecycle of analysis tasks created
+with <code class="docutils literal notranslate"><span class="pre">addsweep</span></code> (parameter sweep, optimization, Monte Carlo,
+S-parameter, corner sweep). Applies to FDTD, MODE, and
+INTERCONNECT. Lives in <a class="reference internal" href="sweeps/index.html#module-ansys.lumerical.mcp.contexts.sweeps" title="ansys.lumerical.mcp.contexts.sweeps"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.sweeps</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pic</span></code> – shared guided-wave photonic simulation hygiene for
+optical elements: PML extension of continuing guided structures,
+mode-solver / port span padding, and avoiding accidental
+substrate-mode selection. Applies to FDTD, MODE, and FEEM. Lives in
+<a class="reference internal" href="pic/index.html#module-ansys.lumerical.mcp.contexts.pic" title="ansys.lumerical.mcp.contexts.pic"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.pic</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nested_sweeps</span></code> – product-agnostic hierarchical sweep guidance:
+build the inner sweep first, wrap it with <code class="docutils literal notranslate"><span class="pre">insertsweep</span></code>, then run
+the outer parent sweep for all parameter combinations. Lives in
+<a class="reference internal" href="sweeps/index.html#module-ansys.lumerical.mcp.contexts.sweeps" title="ansys.lumerical.mcp.contexts.sweeps"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.sweeps</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">materials</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry</span></code> – shared between FDTD and MODE (and,
+for <code class="docutils literal notranslate"><span class="pre">geometry</span></code>, DEVICE), since those products share the same
+material database and layout-object lumapi calls. Live in
+<a class="reference internal" href="materials/index.html#module-ansys.lumerical.mcp.contexts.materials" title="ansys.lumerical.mcp.contexts.materials"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.materials</span></code></a> and
+<a class="reference internal" href="geometry/index.html#module-ansys.lumerical.mcp.contexts.geometry" title="ansys.lumerical.mcp.contexts.geometry"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.geometry</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s_parameter_sweep</span></code> – shared FDTD and MODE recipe for the
+<code class="docutils literal notranslate"><span class="pre">addsweep(3)</span></code> S-parameter matrix sweep, with a Y-branch worked
+example. Lives in
+<a class="reference internal" href="s_parameter_sweep/index.html#module-ansys.lumerical.mcp.contexts.s_parameter_sweep" title="ansys.lumerical.mcp.contexts.s_parameter_sweep"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.s_parameter_sweep</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fdtd_workflow</span></code>, <code class="docutils literal notranslate"><span class="pre">fdtd_workflow_example</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fdtd_sources_monitors</span></code>, <code class="docutils literal notranslate"><span class="pre">fdtd_run_and_results</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fdtd_boundary_conditions</span></code>, <code class="docutils literal notranslate"><span class="pre">fdtd_mesh_and_convergence</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fdtd_source_types</span></code>, <code class="docutils literal notranslate"><span class="pre">fdtd_monitors_and_field_extraction</span></code>,
+<code class="docutils literal notranslate"><span class="pre">fdtd_far_field_and_grating</span></code> – FDTD-specific topics split
+into a build/setup half (<code class="docutils literal notranslate"><span class="pre">fdtd_workflow</span></code> +
+<code class="docutils literal notranslate"><span class="pre">fdtd_workflow_example</span></code> + <code class="docutils literal notranslate"><span class="pre">fdtd_sources_monitors</span></code>), a
+run/results half (<code class="docutils literal notranslate"><span class="pre">fdtd_run_and_results</span></code>), and four deep-dive
+topics on boundary conditions, mesh/convergence, non-port
+source types, monitors and field extraction, and
+far-field/grating projections, all owned by
+<a class="reference internal" href="fdtd/index.html#module-ansys.lumerical.mcp.contexts.fdtd" title="ansys.lumerical.mcp.contexts.fdtd"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.fdtd</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interconnect_workflow</span></code> and <code class="docutils literal notranslate"><span class="pre">interconnect_commands</span></code> –
+INTERCONNECT-specific topics covering build/setup workflow and
+command reference, both owned by
+<a class="reference internal" href="interconnect/index.html#module-ansys.lumerical.mcp.contexts.interconnect" title="ansys.lumerical.mcp.contexts.interconnect"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.interconnect</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device_workflow</span></code>, <code class="docutils literal notranslate"><span class="pre">device_materials</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">device_simulation_region</span></code> – finite-element IDE (DEVICE)
+topics covering the shared HEAT / CHARGE / FEEM / DGTD build/run
+workflow, model-material creation, and simulation-region setup.
+Owned by <a class="reference internal" href="device/index.html#module-ansys.lumerical.mcp.contexts.device" title="ansys.lumerical.mcp.contexts.device"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.device</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode_fde_workflow</span></code>, <code class="docutils literal notranslate"><span class="pre">mode_fde_results</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">mode_eme_workflow</span></code> and <code class="docutils literal notranslate"><span class="pre">mode_varfdtd_workflow</span></code> – MODE-specific
+topics covering FDE setup, FDE solve/results, EME setup/analysis
+workflow, and varFDTD setup/run guidance, all owned by
+<a class="reference internal" href="mode/index.html#module-ansys.lumerical.mcp.contexts.mode" title="ansys.lumerical.mcp.contexts.mode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.contexts.mode</span></code></a>.</p></li>
+<li><p>The system prompt (<a class="reference internal" href="../prompts/index.html#module-ansys.lumerical.mcp.prompts" title="ansys.lumerical.mcp.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.lumerical.mcp.prompts</span></code></a>) is itself
+product-agnostic and does not need to change for new product
+topics.</p></li>
+</ul>
+</section>
+<section id="module-detail">
+<h2>Module detail<a class="headerlink" href="#module-detail" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="contexts.get_guidelines_for">
+<span class="sig-prename descclassname"><span class="pre">contexts.</span></span><span class="sig-name descname"><span class="pre">get_guidelines_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#contexts.GuidelinesContent" title="contexts.GuidelinesContent"><span class="pre">GuidelinesContent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#contexts.get_guidelines_for" title="Link to this definition">#</a></dt>
+<dd><p>Fetch authoritative Lumerical scripting guidelines (markdown) for one topic.</p>
+<p>Call this tool BEFORE writing any Lumerical Python (lumapi) code, once
+per topic you need. Always fetch <code class="docutils literal notranslate"><span class="pre">&quot;workflow&quot;</span></code> first (the
+product-agnostic execution model and do-not-assume rules), then add
+the product-specific topics that match the task.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>content</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Topic to retrieve. One of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;workflow&quot;</span></code> – product-agnostic execution model: chunked
+<code class="docutils literal notranslate"><span class="pre">execute_python_code</span></code> snippets against the persistent
+subprocess, the seeded <code class="docutils literal notranslate"><span class="pre">_lum_get</span></code> / <code class="docutils literal notranslate"><span class="pre">_lum_print_json</span></code>
+helpers, per-product <code class="docutils literal notranslate"><span class="pre"><handle>.run()</span></code> calling conventions,
+and the do-not-assume / do-not-invent / do-not-re-run rules.
+Applies to FDTD, MODE, DEVICE, INTERCONNECT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;sweeps&quot;</span></code> – product-agnostic <code class="docutils literal notranslate"><span class="pre">addsweep</span></code> lifecycle
+(parameter sweep, optimization, Monte Carlo, S-parameter,
+corner sweep), the dict-as-struct payload convention for
+<code class="docutils literal notranslate"><span class="pre">addsweepparameter</span></code> / <code class="docutils literal notranslate"><span class="pre">addsweepresult</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">deletesweep</span></code> idempotent-rebuild pattern, and result
+extraction via <code class="docutils literal notranslate"><span class="pre">getsweepresult</span></code>. Applies to FDTD, MODE,
+INTERCONNECT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;pic&quot;</span></code> – shared photonic simulation hygiene for optical
+elements: extending continuing guided structures through PML,
+giving ports / mode-solver windows enough wavelength-scale
+padding around the confined mode, and avoiding accidental
+substrate-mode selection. Applies to FDTD, MODE, and FEEM.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;nested_sweeps&quot;</span></code> – product-agnostic hierarchical sweep
+workflow: build the inner sweep first, wrap it with
+<code class="docutils literal notranslate"><span class="pre">insertsweep</span></code>, configure the outer sweep, then run the
+outer parent sweep to evaluate all parameter combinations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;materials&quot;</span></code> – built-in vs. custom material selection,
+the <code class="docutils literal notranslate"><span class="pre">addmaterial()</span></code> / <code class="docutils literal notranslate"><span class="pre">setmaterial()</span></code> handle pattern,
+and anisotropic material input (diagonal + grid-attribute
+general anisotropy). Shared by FDTD and MODE.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;geometry&quot;</span></code> – dictionary-based <code class="docutils literal notranslate"><span class="pre">addrect</span></code> / <code class="docutils literal notranslate"><span class="pre">addX</span></code>
+syntax for Lumerical layout objects and the <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">span&quot;</span></code>
+(not <code class="docutils literal notranslate"><span class="pre">&quot;x_span&quot;</span></code>) property-naming convention. Shared by
+FDTD, MODE, and DEVICE.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_workflow&quot;</span></code> – FDTD-specific build/setup stages,
+disambiguation defaults (3D, PML on all open boundaries, SI
+units, built-in materials), and the PML boundary-extension
+rule. Pair with <code class="docutils literal notranslate"><span class="pre">&quot;fdtd_run_and_results&quot;</span></code> for the
+run/results half.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_workflow_example&quot;</span></code> – full worked example (straight
+silicon waveguide with TE port S-parameter extraction):
+pre-flight default-confirmation checklist followed by Steps
+1-8 with the exact <code class="docutils literal notranslate"><span class="pre">execute_python_code</span></code> snippet for each
+chunk.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_sources_monitors&quot;</span></code> – <code class="docutils literal notranslate"><span class="pre">setglobalsource</span></code> /
+<code class="docutils literal notranslate"><span class="pre">setglobalmonitor</span></code> usage (and the no-dict-syntax
+exception); prefer <code class="docutils literal notranslate"><span class="pre">addport()</span></code> over <code class="docutils literal notranslate"><span class="pre">addmode()</span></code> for
+S-parameter extraction; port direction convention.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_run_and_results&quot;</span></code> – FDTD-specific <code class="docutils literal notranslate"><span class="pre">run()</span></code>
+arguments (solver / resource / GPU / Ansys Cloud Burst), the
+<code class="docutils literal notranslate"><span class="pre">run()</span></code>-once + <code class="docutils literal notranslate"><span class="pre">switchtolayout</span></code> rule, the
+dataset-is-a-dict contract for <code class="docutils literal notranslate"><span class="pre">getresult</span></code>, mandatory
+<code class="docutils literal notranslate"><span class="pre">_lum_print_json</span></code> inspection before indexing, the per-port
+S vs. full S-matrix distinction, and the
+<code class="docutils literal notranslate"><span class="pre">fdtd.eval(&quot;<lsf>;&quot;)</span></code> escape hatch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_boundary_conditions&quot;</span></code> – BC decision guide and
+the four FDTD BC families: PML profiles (standard /
+stabilized / steep angle / custom), symmetric and
+anti-symmetric, periodic, and Bloch (plus when to switch
+to the BFAST plane-wave source for broadband angled
+incidence).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_mesh_and_convergence&quot;</span></code> – <code class="docutils literal notranslate"><span class="pre">&quot;mesh</span> <span class="pre">accuracy&quot;</span></code>
+semantics (ppw vs. integer 1-8), conformal-mesh
+refinement variants, <code class="docutils literal notranslate"><span class="pre">addmesh</span></code> overrides for thin
+features and metals, <code class="docutils literal notranslate"><span class="pre">simulation</span> <span class="pre">time</span></code> / auto-shutoff
+interplay, and divergence diagnostics via the FDTD
+solver <code class="docutils literal notranslate"><span class="pre">STATUS</span></code> result.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_source_types&quot;</span></code> – non-port source catalog with
+a decision tree: <code class="docutils literal notranslate"><span class="pre">addplane</span></code> / BFAST plane-wave,
+<code class="docutils literal notranslate"><span class="pre">addgaussian</span></code>, <code class="docutils literal notranslate"><span class="pre">adddipole</span></code>, <code class="docutils literal notranslate"><span class="pre">addtfsf</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">addimportedsource</span></code>; gotchas (TFSF interface
+crossings, broadband-angle injection, dipole homogeneous
+validation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_monitors_and_field_extraction&quot;</span></code> – monitor type
+decision table (DFT power / profile / time / movie /
+index / mode-expansion), <code class="docutils literal notranslate"><span class="pre">&quot;override</span> <span class="pre">global</span> <span class="pre">monitor</span>
+<span class="pre">settings&quot;</span></code> pattern, mode-expansion analysis, and the
+<code class="docutils literal notranslate"><span class="pre">reduce-before-print</span></code> pattern that keeps 3D fields
+from blowing through the <code class="docutils literal notranslate"><span class="pre">_lum_print_json</span></code> truncation
+guard.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;fdtd_far_field_and_grating&quot;</span></code> – turning near-field
+monitor data into <code class="docutils literal notranslate"><span class="pre">farfield2d</span></code> / <code class="docutils literal notranslate"><span class="pre">farfield3d</span></code> /
+<code class="docutils literal notranslate"><span class="pre">farfieldexact</span></code> projections, grating-order analysis
+(<code class="docutils literal notranslate"><span class="pre">gratingn1</span></code> / <code class="docutils literal notranslate"><span class="pre">gratingn2</span></code> / <code class="docutils literal notranslate"><span class="pre">grating</span></code> /
+<code class="docutils literal notranslate"><span class="pre">gratingangle</span></code> / <code class="docutils literal notranslate"><span class="pre">gratingpolar</span></code>), and NA / cone
+filtering via <code class="docutils literal notranslate"><span class="pre">farfield3dintegrate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;s_parameter_sweep&quot;</span></code> – full N x N S-matrix extraction
+via <code class="docutils literal notranslate"><span class="pre">addsweep(3)</span></code> / <code class="docutils literal notranslate"><span class="pre">runsweep</span></code> /
+<code class="docutils literal notranslate"><span class="pre">getsweepresult(&quot;s-parameter</span> <span class="pre">sweep&quot;,</span> <span class="pre">&quot;S</span> <span class="pre">matrix&quot;)</span></code>, with a
+Y-branch worked example (auto symmetry) and Touchstone /
+INTERCONNECT export. Shared by FDTD and MODE; fetch whenever
+the user asks for the full S-matrix of a multi-port device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mode_fde_workflow&quot;</span></code> – MODE FDE-specific build/setup
+workflow: safe <code class="docutils literal notranslate"><span class="pre">addfde()</span></code> + <code class="docutils literal notranslate"><span class="pre">setnamed()</span></code> configuration,
+bent-waveguide keys, active-property caveats, and sweep-safe
+reuse of clean pre-run setup files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mode_fde_results&quot;</span></code> – MODE FDE solve/result guidance:
+when to use <code class="docutils literal notranslate"><span class="pre">findmodes()</span></code>, common <code class="docutils literal notranslate"><span class="pre">getdata()</span></code> fields
+such as <code class="docutils literal notranslate"><span class="pre">neff</span></code> / <code class="docutils literal notranslate"><span class="pre">loss</span></code> / <code class="docutils literal notranslate"><span class="pre">TE</span> <span class="pre">polarization</span> <span class="pre">fraction</span></code> /
+<code class="docutils literal notranslate"><span class="pre">ng</span></code>, and robust TE/TM classification across sweeps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mode_eme_workflow&quot;</span></code> – MODE EME-specific build/setup and
+analysis workflow: cell-group setup, matrix-style <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">spans</span></code> /
+<code class="docutils literal notranslate"><span class="pre">cells</span></code> payloads, layout-vs-analysis mode rules,
+<code class="docutils literal notranslate"><span class="pre">emepropagate()</span></code> / <code class="docutils literal notranslate"><span class="pre">emesweep()</span></code>, port hygiene, and
+user-S-matrix interpretation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mode_varfdtd_workflow&quot;</span></code> – MODE varFDTD-specific
+build/setup workflow: when to use the 2.5D propagator,
+effective-index setup, bandwidth choices, supported source /
+monitor classes, and validation of generated effective
+materials.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;interconnect_workflow&quot;</span></code> – INTERCONNECT-specific
+build/setup workflow: chunked stages for library validation,
+element addition and naming, port discovery, connections,
+property discovery, and save/run sequencing.
+Fetch for any INTERCONNECT photonic circuit task.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;interconnect_simulation&quot;</span></code> – INTERCONNECT root element
+simulation configuration (<code class="docutils literal notranslate"><span class="pre">&quot;simulation</span> <span class="pre">input&quot;</span></code> mode
+selector, time-domain property sets, ONA frequency-domain
+workflow) and <code class="docutils literal notranslate"><span class="pre">getresult</span></code> discovery pattern for analyzers.
+Fetch alongside <code class="docutils literal notranslate"><span class="pre">&quot;interconnect_workflow&quot;</span></code> for any
+simulation setup or result extraction task.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;interconnect_commands&quot;</span></code> – INTERCONNECT-specific lumapi
+command reference: element library, design kits,
+measurements, scripted elements, optimization, and export
+commands. Fetch when you need the exact command name or
+signature for an INTERCONNECT operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;device_workflow&quot;</span></code> – finite-element IDE (DEVICE) workflow
+shared by HEAT, CHARGE, FEEM, and DGTD: chunked stages for
+model-material creation, geometry, solver addition, simulation-
+region linkage, boundary conditions (children of the solver’s
+<code class="docutils literal notranslate"><span class="pre">boundary</span> <span class="pre">conditions</span></code> object), monitors (children of the
+solver object), run, and result collection from both monitors
+and the solver object itself.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;device_materials&quot;</span></code> – model-material creation via
+<code class="docutils literal notranslate"><span class="pre">addmodelmaterial</span></code> / <code class="docutils literal notranslate"><span class="pre">addmaterialproperties</span></code>, property
+families (EM / CT / HT), selection hygiene after each
+<code class="docutils literal notranslate"><span class="pre">addmaterialproperties</span></code> call, and database discovery.
+Shared by HEAT, CHARGE, FEEM, and DGTD.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;device_simulation_region&quot;</span></code> – simulation-region
+ownership model (region is separate from the solver object),
+per-face boundary types (Open / Closed / Shell), background
+material, and linking the region to a solver via
+<code class="docutils literal notranslate"><span class="pre">setnamed(solver,</span> <span class="pre">&quot;simulation</span> <span class="pre">region&quot;,</span> <span class="pre">region_name)</span></code>.
+Shared by HEAT, CHARGE, FEEM, and DGTD.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="contexts.GuidelinesContent">
+<span class="sig-prename descclassname"><span class="pre">contexts.</span></span><span class="sig-name descname"><span class="pre">GuidelinesContent</span></span><a class="headerlink" href="#contexts.GuidelinesContent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-detail">Module detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexts.get_guidelines_for"><code class="docutils literal notranslate"><span class="pre">get_guidelines_for()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexts.GuidelinesContent"><code class="docutils literal notranslate"><span class="pre">GuidelinesContent</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+
+  
+  <nav class="tocsection editthispage" aria-label="Edit this page">
+    <a href="http://github.com/ansys/pylumerical-mcp/edit/main/get_guidelines_for.py" rel="noopener noreferrer">
+      <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </nav>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/api/ansys/lumerical/mcp/contexts/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../_static/js/search.js"></script>
+
+  
+<footer class="bd-footer" font-size="4px">
+  <div class="bd-footer__inner bd-page-width">
+    <div class="footer-items__start">
+      <div class="footer-item">
+        <p class="copyright">
+          PyLumerical-MCP 0.1.0 © Copyright (c) <span id="copyright-year"></span> ANSYS, Inc. All rights reserved.
+          <br>
+        </p>
+        <script>
+          document.getElementById("copyright-year").textContent = new Date().getFullYear();
+        </script>
+      </div>
+    </div>
+    <div class="footer-items__end">
+      <div class="footer-item">
+        <p class="theme-version">
+          Built with the
+          <a href="https://sphinxdocs.ansys.com/version/stable/index.html">Ansys Sphinx Theme</a>
+          1.9.0. and
+           <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+          on <span id="date"></span>
+        </p>
+        <script>
+          var options = { day: "numeric", month: "long", year: "numeric" };
+          var lastModifiedDate = new Date(document.lastModified);
+          var date = lastModifiedDate.toLocaleDateString("en-US", options);
+          document.getElementById("date").innerHTML = date;
+        </script>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

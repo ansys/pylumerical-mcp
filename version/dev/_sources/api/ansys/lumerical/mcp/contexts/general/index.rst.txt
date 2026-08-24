@@ -1,0 +1,105 @@
+
+
+
+
+
+
+The ``general.py`` module
+=========================
+
+.. py:module:: ansys.lumerical.mcp.contexts.general
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: general
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_workflow`
+            - Product-agnostic execution model, snippet structure, chunking, do-not rules.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Product-agnostic Lumerical workflow guidance (``workflow`` topic).
+
+Owns the generic execution model, snippet structure, chunking principle,
+parameter management, and "do NOT make assumptions / do NOT invent or
+re-run" rules that apply to every Lumerical product (FDTD, MODE, DEVICE,
+INTERCONNECT). Product-specific topics live in
+:mod:`ansys.lumerical.mcp.contexts.fdtd` (and future
+``mode``/``device``/``interconnect`` modules).
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_workflow() -> str
+
+   
+   Product-agnostic execution model, snippet structure, chunking, do-not rules.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
