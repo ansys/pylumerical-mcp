@@ -27,19 +27,18 @@ keywords = [
     "mcp",
     "model-context-protocol",
     "ai",
-    "assistant",
+    "assistant"
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 dependencies = [
     "ansys-lumerical-core>=0.3",
@@ -57,7 +56,7 @@ tests = [
     "pytest-timeout==2.4.0",
     "pytest-xdist==3.8.0",
     "pytest-cov==7.1.0",
-    "python-dotenv==1.2.2",
+    "python-dotenv==1.2.2"
 ]
 
 doc = [
@@ -125,7 +124,7 @@ exclude = [
     "^\\.venv/",
     "^venv/",
     "^build/",
-    "^dist/",
+    "^dist/"
 ]
 
 [tool.pytest.ini_options]
@@ -138,14 +137,14 @@ timeout = 120
 markers = [
     "integration: tests requiring Lumerical installation",
     "unit: Unit tests that don't require Lumerical",
-    "slow: Tests that take a long time to run",
+    "slow: Tests that take a long time to run"
 ]
 addopts = [
     "--verbose",
     "--cov=ansys.lumerical.mcp",
     "--cov-report=term-missing",
     "--cov-report=html",
-    "--cov-report=xml",
+    "--cov-report=xml"
 ]
 
 [tool.pydocstyle]
@@ -161,7 +160,7 @@ exclude = [
     ".venv",
     "venv",
     "build",
-    "dist",
+    "dist"
 ]
 
 [tool.towncrier]
