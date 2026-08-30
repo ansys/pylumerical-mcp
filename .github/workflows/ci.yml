@@ -190,12 +190,14 @@ jobs:
         env:
           DOCKER_CONTAINER_LUMERICAL_UNIFIED_NAME: ${{ env.DOCKER_CONTAINER_LUMERICAL_UNIFIED_NAME }}
         run: |
+          # Run serially: one licensed Lumerical instance can't handle concurrent xdist workers.
+          # -o addopts="" clears the inherited -n=auto, since pytest rejects -n once -p no:xdist runs.
           docker exec \
             --workdir /home/lumerical/pylumerical-mcp \
             "${DOCKER_CONTAINER_LUMERICAL_UNIFIED_NAME}" /bin/bash --login -c \
-            "python -m pip install -e .[tests] && \
-             pytest -m integration --cov=ansys.lumerical.mcp \
-             --cov-report=xml:.cov/xml --cov-report=html:.cov/html --verbose"
+            'python -m pip install -e .[tests] && \
+             pytest -m integration -p no:xdist -o addopts="" --cov=ansys.lumerical.mcp \
+             --cov-report=xml:.cov/xml --cov-report=html:.cov/html --verbose'
 
       - name: "Restore original ownership"
         if: always()

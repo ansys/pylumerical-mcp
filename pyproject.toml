@@ -141,6 +141,7 @@ markers = [
 ]
 addopts = [
     "--verbose",
+    "-n=auto",
     "--cov=ansys.lumerical.mcp",
     "--cov-report=term-missing",
     "--cov-report=html",
