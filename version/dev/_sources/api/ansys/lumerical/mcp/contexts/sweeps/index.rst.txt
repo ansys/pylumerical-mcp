@@ -1,0 +1,133 @@
+
+
+
+
+
+
+The ``sweeps.py`` module
+========================
+
+.. py:module:: ansys.lumerical.mcp.contexts.sweeps
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: sweeps
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_sweeps`
+            - Product-agnostic sweep lifecycle: addsweep/setsweep/runsweep/getsweepresult.
+
+
+          * - :py:obj:`~get_guidelines_for_nested_sweeps`
+            - Product-agnostic nested sweep workflow based on ``insertsweep``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Product-agnostic sweep guidance (``sweeps`` and ``nested_sweeps`` topics).
+
+Owns the generic lifecycle of any analysis task created with
+``addsweep`` and configured via the matching ``setsweep`` /
+``addsweepparameter`` / ``runsweep`` / ``getsweepresult`` /
+``deletesweep`` lsf commands. Applies to FDTD, MODE, and INTERCONNECT.
+The S-parameter matrix sweep flavour (``addsweep(3)``) has additional
+product-specific rules and a Y-branch worked example in
+:mod:`ansys.lumerical.mcp.contexts.s_parameter_sweep`.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_sweeps() -> str
+
+   
+   Product-agnostic sweep lifecycle: addsweep/setsweep/runsweep/getsweepresult.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_nested_sweeps() -> str
+
+   
+   Product-agnostic nested sweep workflow based on ``insertsweep``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

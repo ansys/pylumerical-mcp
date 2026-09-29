@@ -1,0 +1,101 @@
+
+
+
+
+
+
+:class:`SessionInfo`
+====================
+
+
+.. py:class:: ansys.lumerical.mcp.context.SessionInfo
+
+   
+   Metadata for one Lumerical CAD session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: SessionInfo
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~product`
+            - 
+          * - :py:attr:`~filename`
+            - 
+          * - :py:attr:`~hide`
+            - 
+          * - :py:attr:`~opened_at`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.lumerical.mcp.context import SessionInfo
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: name
+   :type:  str
+
+.. py:attribute:: product
+   :type:  str
+
+.. py:attribute:: filename
+   :type:  Optional[str]
+   :value: None
+
+
+.. py:attribute:: hide
+   :type:  bool
+   :value: False
+
+
+.. py:attribute:: opened_at
+   :type:  float
+
+
+
+
+

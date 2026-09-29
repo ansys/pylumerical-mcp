@@ -1,0 +1,179 @@
+
+
+
+
+
+
+The ``mode.py`` module
+======================
+
+.. py:module:: ansys.lumerical.mcp.contexts.mode
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: mode
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_mode_fde_workflow`
+            - MODE FDE build/setup workflow for straight and bent-waveguide tasks.
+
+
+          * - :py:obj:`~get_guidelines_for_mode_fde_results`
+            - MODE FDE solve/result extraction guidance.
+
+
+          * - :py:obj:`~get_guidelines_for_mode_eme_workflow`
+            - MODE EME build/setup and analysis workflow.
+
+
+          * - :py:obj:`~get_guidelines_for_mode_varfdtd_workflow`
+            - MODE varFDTD build/setup workflow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+MODE-specific guideline topics.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_mode_fde_workflow() -> str
+
+   
+   MODE FDE build/setup workflow for straight and bent-waveguide tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_mode_fde_results() -> str
+
+   
+   MODE FDE solve/result extraction guidance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_mode_eme_workflow() -> str
+
+   
+   MODE EME build/setup and analysis workflow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_mode_varfdtd_workflow() -> str
+
+   
+   MODE varFDTD build/setup workflow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

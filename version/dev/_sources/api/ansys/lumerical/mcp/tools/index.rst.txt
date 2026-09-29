@@ -1,0 +1,319 @@
+
+
+
+
+
+
+The ``tools.py`` module
+=======================
+
+.. py:module:: ansys.lumerical.mcp.tools
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: tools
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~list_tool_sets`
+            - Toolset definitions consumed by MCP clients and Ansys product UIs.
+
+
+          * - :py:obj:`~open_session`
+            - Open a Lumerical CAD session and register it under ``name``.
+
+
+          * - :py:obj:`~close_session`
+            - Close a Lumerical session and remove it from the registry.
+
+
+          * - :py:obj:`~list_sessions`
+            - List currently open Lumerical sessions (metadata only).
+
+
+          * - :py:obj:`~execute_python_code`
+            - Execute Python in the persistent subprocess that hosts all Lumerical sessions.
+
+
+          * - :py:obj:`~restart_session`
+            - Restart the persistent Python subprocess that hosts all Lumerical sessions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+The MCP tools exposed by the PyLumerical MCP server.
+
+Each tool builds a small Python snippet (see
+:mod:`ansys.lumerical.mcp.session_helpers`), runs it in the persistent
+Python subprocess, and returns a JSON-safe dictionary. FastMCP forwards the
+dictionary as MCP ``structuredContent`` so that clients see a single-encoded JSON
+object (no double escaping). Heavy work (Lumerical orchestration, result
+serialization, plotting) goes through :func:`execute_python_code` against
+the helpers seeded by :mod:`ansys.lumerical.mcp.startup_code`.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: list_tool_sets() -> list[dict[str, Any]]
+
+   
+   Toolset definitions consumed by MCP clients and Ansys product UIs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: open_session(ctx: fastmcp.Context, name: Annotated[str, Field(description='Unique session name. Used in subsequent tool calls.')], product: Annotated[Literal['fdtd', 'mode', 'device', 'interconnect'], Field(description='Lumerical product to launch.')], filename: Annotated[Optional[str], Field(description='Optional path to an existing .fsp/.lms/.icp/.ldev project to load on open.')] = None, hide: Annotated[Optional[bool], Field(description='OMIT this argument unless the user explicitly asks to override the default.')] = None) -> dict[str, Any]
+   :async:
+
+
+   
+   Open a Lumerical CAD session and register it under ``name``.
+
+   Multiple sessions of any product type may be open concurrently. Each is
+   addressable by the ``name`` you choose here. Returns a JSON-safe dictionary
+   envelope (delivered to the client as MCP ``structuredContent``) with
+   success/failure plus session metadata. Common failures include duplicate
+   name, invalid product, and license-server errors.
+
+   The call blocks until the subprocess finishes the open. If a Lumerical
+   product wedges (such as a license-server hang), dispatch a parallel
+   ``restart_session`` tool call to recover.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: close_session(ctx: fastmcp.Context, name: Annotated[str, Field(description='Session name to close.')]) -> dict[str, Any]
+   :async:
+
+
+   
+   Close a Lumerical session and remove it from the registry.
+
+   Bounded by :data:`_CLOSE_SESSION_TIMEOUT_S`. On timeout, returns a
+   failure envelope with ``timed_out=True`` and ``retained=True`` so the
+   agent can dispatch ``restart_session`` to recover. The orphaned worker
+   thread is left to drain on its own (asyncio cannot cancel it).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: list_sessions(ctx: fastmcp.Context) -> dict[str, Any]
+   :async:
+
+
+   
+   List currently open Lumerical sessions (metadata only).
+
+   The returned list reflects the MCP server's view of registered sessions.
+   To verify the live subprocess registry, use ``execute_python_code`` with
+   ``_lum_print_json(_lum_list())``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: execute_python_code(ctx: fastmcp.Context, code: Annotated[str, Field(description='Python source to execute in the persistent subprocess that hosts all Lumerical sessions.')]) -> dict[str, Any]
+   :async:
+
+
+   
+   Execute Python in the persistent subprocess that hosts all Lumerical sessions.
+
+   Pre-loaded into the subprocess globals:
+
+   - Imports: ``FDTD``, ``MODE``, ``DEVICE``, ``INTERCONNECT`` from ``ansys.lumerical.core``
+   - Registry: ``_lumerical_sessions: dict[str, Lumerical]`` (live handles)
+   - Helpers:
+
+     * ``_lum_open(name, product, filename=None, hide=False)`` -- prefer
+       the ``open_session`` MCP tool over calling this helper directly
+     * ``_lum_close(name)``
+     * ``_lum_get(name)`` -- returns the live handle for ``name``
+     * ``_lum_list()``
+     * ``_lum_print_json(obj, *, max_array_size=200_000, indent=None)``
+
+   DATA-RETURN CONTRACT: only ``print()``-ed text leaves the subprocess. For
+   structured data (numpy arrays, dictionaries, Lumerical results), use
+   ``_lum_print_json(...)``. It handles numpy/complex/dict/list with a
+   size guard that truncates arrays larger than ``max_array_size`` to
+   ``{shape, dtype, preview}`` so the LLM context window doesn't get blown
+   up by multi-MB field data.
+
+   Example -- run an FDTD simulation and pull a transmission spectrum::
+
+       fdtd = _lum_get("fdtd_main")
+       fdtd.addrect(name="r1", x=0, x_span=1e-6, y=0, y_span=1e-6, z=0, z_span=1e-6)
+       fdtd.save("foo.fsp")
+       fdtd.run()
+       _lum_print_json(fdtd.getresult("T_monitor", "T"))
+
+   The call blocks until the snippet finishes. The lock that serializes
+   subprocess access is held for the duration, so if a snippet hangs
+   (infinite loop, unterminated multi-line input, license-server stall),
+   the agent must dispatch a parallel ``restart_session`` tool call to
+   recover.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: restart_session(ctx: fastmcp.Context) -> dict[str, Any]
+   :async:
+
+
+   
+   Restart the persistent Python subprocess that hosts all Lumerical sessions.
+
+   Use this when a previous tool call appears stuck. Typical triggers are
+   an unterminated multi-line snippet sent to ``execute_python_code``, an
+   infinite loop in user code, or a license-server/Lumerical handshake
+   that has wedged. Since :meth:`LumericalPersistentPythonSession.execute`
+   blocks indefinitely (see :mod:`ansys.lumerical.mcp.persistent_session`),
+   this tool is the agent-visible recovery path.
+
+   Because blocking ``execute`` calls run on worker threads, this coroutine
+   can run while a previous ``execute_python_code`` is still blocked. The
+   restart kills the wedged subprocess, so that blocked call also returns
+   shortly after (with an error envelope, since its subprocess died).
+
+
+
+
+   :Returns:
+
+       :class:`python:dict`\[:class:`python:str`, :obj:`Any`]
+           JSON-safe envelope dictionary. On success the ``data`` payload contains
+           ``{"restarted": True, "cleared_sessions": [<names>]}``. On failure
+           the envelope is the standard ``{"success": False, "error": "..."}``.
+           FastMCP forwards this dictionary as MCP ``structuredContent`` so MCP
+           clients see it as a parsed JSON object (no double escaping).
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

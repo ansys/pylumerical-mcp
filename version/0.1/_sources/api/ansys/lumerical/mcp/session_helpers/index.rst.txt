@@ -1,0 +1,321 @@
+
+
+
+
+
+
+The ``session_helpers.py`` module
+=================================
+
+.. py:module:: ansys.lumerical.mcp.session_helpers
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: session_helpers
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~build_open_session_snippet`
+            - Snippet that opens a Lumerical session and prints metadata as JSON.
+
+
+          * - :py:obj:`~build_close_session_snippet`
+            - Snippet that closes a Lumerical session and prints the result as JSON.
+
+
+          * - :py:obj:`~build_eval_snippet`
+            - Snippet that runs LSF in a session and prints a small status JSON.
+
+
+          * - :py:obj:`~build_close_all_snippet`
+            - Snippet that closes every still-open Lumerical session (used at shutdown).
+
+
+          * - :py:obj:`~extract_json_payload`
+            - Pull the last JSON document printed to stdout, or ``None`` if absent.
+
+
+          * - :py:obj:`~envelope_success`
+            - Build a success envelope as a plain JSON-safe dictionary.
+
+
+          * - :py:obj:`~envelope_failure`
+            - Build a failure envelope as a plain JSON-safe dictionary.
+
+
+          * - :py:obj:`~render_envelope_from_execute`
+            - Convert a ``PersistentPythonSession.execute`` result to our envelope.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Pure helpers for building Python snippets and parsing subprocess results.
+
+Every MCP tool in :mod:`ansys.lumerical.mcp.tools` follows the same shape:
+
+1. Build a short Python snippet (:func:`build_*_snippet`) that calls the
+   helpers seeded into the persistent subprocess by
+   :mod:`ansys.lumerical.mcp.startup_code` and prints a single JSON line on
+   success.
+2. Run the snippet via ``PersistentPythonSession.execute(snippet)``.
+3. Wrap the framework's result dictionary into one of the JSON envelopes
+   (:func:`envelope_success`, :func:`envelope_failure`).
+
+Keeping these functions pure makes the tool layer trivial to unit test
+without spawning a real subprocess or installing Lumerical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: build_open_session_snippet(name: str, product: str, filename: Optional[str], hide: bool) -> str
+
+   
+   Snippet that opens a Lumerical session and prints metadata as JSON.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: build_close_session_snippet(name: str) -> str
+
+   
+   Snippet that closes a Lumerical session and prints the result as JSON.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: build_eval_snippet(session: str, script: str) -> str
+
+   
+   Snippet that runs LSF in a session and prints a small status JSON.
+
+   Lumerical's ``.eval()`` returns ``None``. Outputs from the script (such as ``?x;``)
+   go to the Lumerical log, not the Python subprocess stdout. If the agent
+   needs values back, it should call ``getv``/``getresult`` via
+   ``execute_python_code`` after this returns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: build_close_all_snippet() -> str
+
+   
+   Snippet that closes every still-open Lumerical session (used at shutdown).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: extract_json_payload(stdout: str) -> Optional[Any]
+
+   
+   Pull the last JSON document printed to stdout, or ``None`` if absent.
+
+   The startup-code helpers use ``_lum_print_json``, which emits exactly one
+   JSON document per call (single-line by default). Other libraries may have
+   printed unrelated text before that, so this process is used:
+
+   1. Try a whole-string parse first.
+   2. Try a per-line parse from the end (cheap, single-line JSON).
+   3. Fall back to scanning backwards through ``{`` / ``[`` openers and
+      using :class:`json.JSONDecoder.raw_decode` to recover pretty-printed
+      JSON that spans multiple lines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: envelope_success(payload: Any, **extras: Any) -> dict[str, Any]
+
+   
+   Build a success envelope as a plain JSON-safe dictionary.
+
+   Returning a dictionary (rather than a JSON string) lets FastMCP deliver the
+   result as MCP ``structuredContent``, so clients see a single-encoded
+   JSON object instead of the doubly-escaped text that resulted from
+   JSON-encoding a JSON string at the transport layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: envelope_failure(error: str, *, stdout: str = '', stderr: str = '', **extras: Any) -> dict[str, Any]
+
+   
+   Build a failure envelope as a plain JSON-safe dictionary.
+
+   See :func:`envelope_success` for the rationale behind returning a dictionary
+   instead of a JSON string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: render_envelope_from_execute(execute_result: dict, *, on_success_payload: Optional[Any] = None) -> dict[str, Any]
+
+   
+   Convert a ``PersistentPythonSession.execute`` result to our envelope.
+
+   If ``on_success_payload`` is provided, it overrides the parsed-from-stdout
+   payload. Otherwise, an attempt is made to parse the last JSON line from stdout.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

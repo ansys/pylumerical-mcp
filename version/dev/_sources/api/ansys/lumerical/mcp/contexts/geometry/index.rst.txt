@@ -1,0 +1,103 @@
+
+
+
+
+
+
+The ``geometry.py`` module
+==========================
+
+.. py:module:: ansys.lumerical.mcp.contexts.geometry
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: geometry
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_geometry`
+            - Dictionary-based ``addX`` syntax for Lumerical layout objects (FDTD/MODE/DEVICE).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Dictionary-based ``addX`` syntax shared by FDTD, MODE, and DEVICE.
+
+All three products use the same lumapi calls (``addrect``,
+``addcircle``, ``addsphere``, ...) and the same dictionary form.
+Substitute the appropriate handle name (``fdtd``, ``mode``,
+``device``) for the snippets below.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_geometry() -> str
+
+   
+   Dictionary-based ``addX`` syntax for Lumerical layout objects (FDTD/MODE/DEVICE).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

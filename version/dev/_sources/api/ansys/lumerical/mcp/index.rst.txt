@@ -1,0 +1,199 @@
+
+
+
+
+
+
+The ``ansys.lumerical.mcp`` library
+===================================
+
+.. py:module:: ansys.lumerical.mcp
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: mcp
+.. tab-set::
+
+    .. tab-item:: Subpackages
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.contexts`
+            - Curated Lumerical scripting guidance returned by ``get_guidelines_for``.
+
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.__main__`
+            - Module entrypoint: ``python -m ansys.lumerical.mcp``.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.config`
+            - Runtime configuration for the PyLumerical MCP server.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.context`
+            - Application context for the PyLumerical MCP server.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.persistent_session`
+            - Lumerical-tuned :class:`PersistentPythonSession`.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.prompts`
+            - System-prompt template registered with FastMCP's prompt system.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.server`
+            - PyLumerical MCP server entry point.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.session_helpers`
+            - Pure helpers for building Python snippets and parsing subprocess results.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.startup_code`
+            - Bootstrap code fed into the framework's persistent Python subprocess.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.tools`
+            - The MCP tools exposed by the PyLumerical MCP server.
+
+
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~__version__`
+            - PyLumerical MCP version.
+
+
+          * - :py:obj:`~app`
+            - 
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-package"></span> contexts</api/ansys/lumerical/mcp/contexts/index>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> __main__</api/ansys/lumerical/mcp/__main__/index>
+    <span class="nf nf-fa-file"></span> config</api/ansys/lumerical/mcp/config/index>
+    <span class="nf nf-fa-file"></span> context</api/ansys/lumerical/mcp/context/index>
+    <span class="nf nf-fa-file"></span> persistent_session</api/ansys/lumerical/mcp/persistent_session/index>
+    <span class="nf nf-fa-file"></span> prompts</api/ansys/lumerical/mcp/prompts/index>
+    <span class="nf nf-fa-file"></span> server</api/ansys/lumerical/mcp/server/index>
+    <span class="nf nf-fa-file"></span> session_helpers</api/ansys/lumerical/mcp/session_helpers/index>
+    <span class="nf nf-fa-file"></span> startup_code</api/ansys/lumerical/mcp/startup_code/index>
+    <span class="nf nf-fa-file"></span> tools</api/ansys/lumerical/mcp/tools/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+PyLumerical MCP Server.
+
+Model Context Protocol server that exposes Ansys Lumerical (via PyLumerical)
+to LLM agents. Built on top of ``ansys-common-mcp``'s :class:`PyAnsysBaseMCP`,
+extended to support multiple concurrent named Lumerical sessions hosted inside
+the framework's persistent Python subprocess.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: __version__
+
+   
+   PyLumerical MCP version.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
