@@ -14,20 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Shared photonic-integrated-circuit guidance for optical solvers."""
-
-from __future__ import annotations
-
-from importlib.resources import files
-
-
-def get_guidelines_for_pic() -> str:
-    """Shared PIC simulation hygiene for FDTD, MODE, and FEEM optical tasks."""
-    return (
-        files("ansys.lumerical.mcp.contexts.data.pic")
-        .joinpath("pic.md")
-        .read_text(encoding="utf-8")
-    )
-
-
-__all__ = ["get_guidelines_for_pic"]
+"""Markdown guideline data for :mod:`ansys.lumerical.mcp.contexts.materials`."""
