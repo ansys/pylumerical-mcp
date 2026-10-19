@@ -141,7 +141,7 @@ jobs:
       contents: read # Needed to checkout the code
       packages: read # Needed to pull the Lumerical container image
     env:
-      DOCKER_IMAGE_LUMERICAL_UNIFIED: 'ghcr.io/ansys-internal/lumerical-unified:v261_1'
+      DOCKER_IMAGE_LUMERICAL_UNIFIED: 'ghcr.io/ansys/lumerical-unified:v261_4'
       DOCKER_CONTAINER_LUMERICAL_UNIFIED_NAME: 'lumerical-unified'
     steps:
       - name: "Checkout pylumerical-mcp"
@@ -182,6 +182,7 @@ jobs:
             --detach -it \
             --network="host" \
             --name "${DOCKER_CONTAINER_LUMERICAL_UNIFIED_NAME}" \
+            --add-host "ansys-license-s:${LICENSE_SERVER}" \
             --env ANSYSLMD_LICENSE_FILE=1055@${LICENSE_SERVER} \
             --mount type=bind,source=${PWD},target=/home/lumerical/pylumerical-mcp \
             "${DOCKER_IMAGE_LUMERICAL_UNIFIED}"
