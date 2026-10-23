@@ -1,0 +1,122 @@
+
+
+
+
+
+
+The ``config.py`` module
+========================
+
+.. py:module:: ansys.lumerical.mcp.config
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: config
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.config.Config`
+            - Resolved configuration for one server process.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~load_config`
+            - Load environment variables (via ``.env`` if present) and build a ``Config`` object.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> Config</api/ansys/lumerical/mcp/config/Config>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Runtime configuration for the PyLumerical MCP server.
+
+Reads environment variables (loaded by ``python-dotenv`` from ``.env`` when
+present) and exposes a single immutable ``Config`` object the server consults
+at startup.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: load_config() -> Config
+
+   
+   Load environment variables (via ``.env`` if present) and build a ``Config`` object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

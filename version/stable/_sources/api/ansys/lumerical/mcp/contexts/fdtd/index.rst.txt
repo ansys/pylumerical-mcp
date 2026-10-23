@@ -1,0 +1,343 @@
+
+
+
+
+
+
+The ``fdtd.py`` module
+======================
+
+.. py:module:: ansys.lumerical.mcp.contexts.fdtd
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: fdtd
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_workflow`
+            - FDTD-specific build/setup workflow: stages, PML extension, disambiguation defaults.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_workflow_example`
+            - Worked end-to-end FDTD example: straight silicon waveguide with TE ports.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_sources_monitors`
+            - Global source/monitor settings and the port-vs-mode-source decision.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_run_and_results`
+            - FDTD run + results: solver args, run-once + ``switchtolayout``, datasets, ``getresult``.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_boundary_conditions`
+            - FDTD boundary conditions: PML profiles, symmetric/anti-symmetric, periodic, Bloch.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_mesh_and_convergence`
+            - FDTD mesh accuracy, conformal mesh, mesh overrides, auto-shutoff, divergence.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_source_types`
+            - FDTD source-type catalog: plane wave, Gaussian, dipole, TFSF, import, BFAST.
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_monitors_and_field_extraction`
+            - FDTD monitor catalog + field-extraction patterns (override-global, reduce-before-print).
+
+
+          * - :py:obj:`~get_guidelines_for_fdtd_far_field_and_grating`
+            - FDTD far-field and grating projection: farfield2d/3d, farfieldexact, NA filtering.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+FDTD-specific guideline topics.
+
+Owns every Lumerical FDTD-flavoured guideline:
+
+- ``fdtd_workflow`` -- chunked **build/setup** stages, PML extension
+  rule, disambiguation defaults.
+- ``fdtd_workflow_example`` -- worked end-to-end build (straight
+  silicon waveguide with TE port S-parameter extraction).
+- ``fdtd_sources_monitors`` -- ``setglobalsource`` /
+  ``setglobalmonitor`` rules, port-vs-mode-source decision,
+  injection control via ``FDTD::ports``.
+- ``fdtd_run_and_results`` -- FDTD-specific ``run()`` calling
+  conventions (solver / resource type / resource name / CUDA /
+  Cloud Burst), ``run()``-once + ``switchtolayout`` rule,
+  dataset-as-dict contract, and ``getresult`` discovery.
+- ``fdtd_boundary_conditions`` -- PML profiles (standard /
+  stabilized / steep angle), symmetric / anti-symmetric, periodic,
+  Bloch; decision guide.
+- ``fdtd_mesh_and_convergence`` -- ``mesh accuracy`` semantics,
+  conformal-mesh variants, mesh overrides, simulation time /
+  auto-shutoff, divergence diagnostics.
+- ``fdtd_source_types`` -- non-port source catalog: plane wave,
+  BFAST, Gaussian, dipole, TFSF, imported source.
+- ``fdtd_monitors_and_field_extraction`` -- monitor catalog,
+  override-global pattern, mode expansion, reduce-before-print.
+- ``fdtd_far_field_and_grating`` -- ``farfield2d/3d``,
+  ``farfieldexact``, grating projections, NA filtering.
+
+Cross-cutting topics that apply to several products live in their
+own modules to avoid duplication.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_fdtd_workflow() -> str
+
+   
+   FDTD-specific build/setup workflow: stages, PML extension, disambiguation defaults.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_workflow_example() -> str
+
+   
+   Worked end-to-end FDTD example: straight silicon waveguide with TE ports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_sources_monitors() -> str
+
+   
+   Global source/monitor settings and the port-vs-mode-source decision.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_run_and_results() -> str
+
+   
+   FDTD run + results: solver args, run-once + ``switchtolayout``, datasets, ``getresult``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_boundary_conditions() -> str
+
+   
+   FDTD boundary conditions: PML profiles, symmetric/anti-symmetric, periodic, Bloch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_mesh_and_convergence() -> str
+
+   
+   FDTD mesh accuracy, conformal mesh, mesh overrides, auto-shutoff, divergence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_source_types() -> str
+
+   
+   FDTD source-type catalog: plane wave, Gaussian, dipole, TFSF, import, BFAST.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_monitors_and_field_extraction() -> str
+
+   
+   FDTD monitor catalog + field-extraction patterns (override-global, reduce-before-print).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_fdtd_far_field_and_grating() -> str
+
+   
+   FDTD far-field and grating projection: farfield2d/3d, farfieldexact, NA filtering.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

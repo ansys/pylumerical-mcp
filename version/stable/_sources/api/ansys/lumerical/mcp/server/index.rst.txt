@@ -1,0 +1,118 @@
+
+
+
+
+
+
+The ``server.py`` module
+========================
+
+.. py:module:: ansys.lumerical.mcp.server
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: server
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.server.PyLumericalMCP`
+            - MCP server exposing Ansys Lumerical (via PyLumerical) to LLM agents.
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~logger`
+            - 
+
+
+          * - :py:obj:`~config`
+            - 
+
+
+          * - :py:obj:`~app`
+            - 
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> PyLumericalMCP</api/ansys/lumerical/mcp/server/PyLumericalMCP>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+PyLumerical MCP server entry point.
+
+Defines :class:`PyLumericalMCP`, a subclass of
+:class:`ansys.common.mcp.PyAnsysBaseMCP` that:
+
+- Replaces the framework's default subprocess startup code with one that does
+  not assume Matplotlib/PyVista/PIL are installed (they aren't, in
+  baseline dependencies), but seeds the Lumerical session registry and helpers.
+- Registers the MCP tools declared in :mod:`ansys.lumerical.mcp.tools`.
+- Cleans up any open Lumerical sessions on shutdown.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: logger
+
+.. py:data:: config
+
+.. py:data:: app
+
+
+

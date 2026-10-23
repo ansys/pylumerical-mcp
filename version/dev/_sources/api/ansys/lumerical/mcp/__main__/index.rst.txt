@@ -1,0 +1,98 @@
+
+
+
+
+
+
+The ``__main__.py`` module
+==========================
+
+.. py:module:: ansys.lumerical.mcp.__main__
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: __main__
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~launcher`
+            - Entry point used by the ``pylumerical-mcp`` console script.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module entrypoint: ``python -m ansys.lumerical.mcp``.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: launcher() -> None
+
+   
+   Entry point used by the ``pylumerical-mcp`` console script.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

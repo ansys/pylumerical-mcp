@@ -1,0 +1,80 @@
+
+
+
+
+
+
+:class:`PyLumericalContext`
+===========================
+
+
+.. py:class:: ansys.lumerical.mcp.context.PyLumericalContext
+
+   Bases: :py:obj:`ansys.common.mcp.PyAnsysBaseAppContext`
+
+
+   
+   Multi-session context for the PyLumerical MCP server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: PyLumericalContext
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~sessions`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.lumerical.mcp.context import PyLumericalContext
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: sessions
+   :type:  dict[str, SessionInfo]
+
+
+
+
+

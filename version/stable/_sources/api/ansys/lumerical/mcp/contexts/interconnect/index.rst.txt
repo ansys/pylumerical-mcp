@@ -1,0 +1,165 @@
+
+
+
+
+
+
+The ``interconnect.py`` module
+==============================
+
+.. py:module:: ansys.lumerical.mcp.contexts.interconnect
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: interconnect
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_interconnect_workflow`
+            - INTERCONNECT-specific build/setup workflow: stages, element management, simulation config.
+
+
+          * - :py:obj:`~get_guidelines_for_interconnect_simulation`
+            - INTERCONNECT simulation config: root element, time/freq domain, result extraction.
+
+
+          * - :py:obj:`~get_guidelines_for_interconnect_commands`
+            - INTERCONNECT-specific lumapi command reference by category.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+INTERCONNECT-specific guideline topics.
+
+Owns every Lumerical INTERCONNECT-flavoured guideline:
+
+- ``interconnect_workflow`` -- chunked build/setup stages for photonic
+  circuit simulation: element addition, naming, selection, connection,
+  compound elements, and property discovery.
+- ``interconnect_simulation`` -- root element simulation configuration
+  (time-domain vs. frequency-domain modes, ``"simulation input"``
+  selector, ONA frequency-domain workflow), and ``getresult``
+  discovery pattern for analyzers.
+- ``interconnect_commands`` -- reference of INTERCONNECT-specific lumapi
+  commands grouped by category (element library, design kits,
+  measurements, scripted elements).
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_interconnect_workflow() -> str
+
+   
+   INTERCONNECT-specific build/setup workflow: stages, element management, simulation config.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_interconnect_simulation() -> str
+
+   
+   INTERCONNECT simulation config: root element, time/freq domain, result extraction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_guidelines_for_interconnect_commands() -> str
+
+   
+   INTERCONNECT-specific lumapi command reference by category.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

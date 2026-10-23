@@ -1,0 +1,93 @@
+
+
+
+
+
+
+:class:`Config`
+===============
+
+
+.. py:class:: ansys.lumerical.mcp.config.Config
+
+   
+   Resolved configuration for one server process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: Config
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~hide_gui`
+            - 
+          * - :py:attr:`~license_file`
+            - 
+          * - :py:attr:`~install_dir`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.lumerical.mcp.config import Config
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: hide_gui
+   :type:  bool
+   :value: False
+
+
+.. py:attribute:: license_file
+   :type:  Optional[str]
+   :value: None
+
+
+.. py:attribute:: install_dir
+   :type:  Optional[str]
+   :value: None
+
+
+
+
+
+

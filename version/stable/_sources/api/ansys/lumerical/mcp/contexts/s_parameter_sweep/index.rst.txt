@@ -1,0 +1,105 @@
+
+
+
+
+
+
+The ``s_parameter_sweep.py`` module
+===================================
+
+.. py:module:: ansys.lumerical.mcp.contexts.s_parameter_sweep
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: s_parameter_sweep
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_guidelines_for_s_parameter_sweep`
+            - S-parameter matrix sweep recipe and Y-branch example for FDTD and MODE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+S-parameter matrix sweep guidance shared by FDTD and MODE (``s_parameter_sweep``).
+
+Both products expose ``addsweep(3)`` and the same
+``runsweep``/``getsweepresult``/``exportsweep`` lifecycle for
+extracting a full N x N S-matrix; the per-task property set differs
+(documented inline). Snippets use the ``fdtd`` handle name for
+brevity. The ``mode`` handle works identically (substitute the
+appropriate name).
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_guidelines_for_s_parameter_sweep() -> str
+
+   
+   S-parameter matrix sweep recipe and Y-branch example for FDTD and MODE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

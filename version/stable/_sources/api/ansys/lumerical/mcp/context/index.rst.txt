@@ -1,0 +1,109 @@
+
+
+
+
+
+
+The ``context.py`` module
+=========================
+
+.. py:module:: ansys.lumerical.mcp.context
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: context
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.context.SessionInfo`
+            - Metadata for one Lumerical CAD session.
+
+
+          * - :py:obj:`~ansys.lumerical.mcp.context.PyLumericalContext`
+            - Multi-session context for the PyLumerical MCP server.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~_lifespan_context`
+            - Pull the typed application context off a FastMCP request context.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> SessionInfo</api/ansys/lumerical/mcp/context/SessionInfo>
+    <span class="nf nf-cod-symbol_class"></span> PyLumericalContext</api/ansys/lumerical/mcp/context/PyLumericalContext>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Application context for the PyLumerical MCP server.
+
+Extends :class:`ansys.common.mcp.PyAnsysBaseAppContext` with a per-name
+``sessions`` registry that mirrors the Lumerical handles living inside the
+framework's persistent Python subprocess. The dictionary here is metadata only. The
+live ``FDTD``/``MODE``/``DEVICE``/``INTERCONNECT`` instances live in the
+subprocess and are reached via the seeded ``_lum_get(name)`` helper.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+
