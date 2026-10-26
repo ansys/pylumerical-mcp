@@ -162,6 +162,14 @@ Exception is device.addelectricalcontact() which is used to add electrical conta
 boundary conditions for CHARGE solver. This command is only available when CHARGE solver is present
 in the project.
 
+Note that HEAT has a separate addvoltagebc() command for adding voltage boundary conditions. Do not use addelectricalcontact() with HEAT.
+
+`surface type` on a boundary condition selects how its surface is defined. Valid values are: `"domain:exterior"`, `"domain:domain"`, `"domain"`,
+`"solid"`, `"simulation region"`, `"solid:simulation region"`, `"material:material"`, `"surface"`, `"coordinates"`, `"coordinates of domain"`.
+
+When setting boundary conditions to a simulation boundary (surface) use the x min, x max, y min, y max, z min, z max parameters. 
+Set one or more of these to 1 to apply BC to that boundary and to 0 to not apply (default)
+
 ### Stage 8 -- Add Monitors
 
 Monitors are also children of the solver object. After adding a monitor,
