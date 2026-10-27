@@ -52,7 +52,7 @@ tests = [
     "ansys-lumerical-core==0.4.0",
     "pytest==9.1.1",
     "pytest-asyncio==1.4.0",
-    "pytest-mock==3.16.0",
+    "pytest-mock==3.17.0",
     "pytest-timeout==2.4.0",
     "pytest-xdist==3.8.0",
     "pytest-cov==7.1.0",
